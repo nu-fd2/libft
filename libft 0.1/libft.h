@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:12:07 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/10/29 05:43:24 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/10/30 23:57:13 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ char *ft_strdup(const char *s1);
 char *ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
 //File Descriptor Functions
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
+void ft_putendl_fd(char *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 
 //Bonus: Linked List Functions
 

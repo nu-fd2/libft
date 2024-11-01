@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 19:56:25 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/10/29 20:18:19 by oel-mado         ###   ########.fr       */
+/*   Created: 2024/10/26 20:22:45 by oel-mado          #+#    #+#             */
+/*   Updated: 2024/10/30 23:54:51 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_split(char *str, char c)
+char *ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
     int i;
     int j;
-    char **ptr;
     i = 0;
-    while (str[i])
+    j = 0;
+    if (needle[i] == '\0')
+        return ((char *)haystack);
+    while (haystack[i] && i < n)
     {
-        while ()
+        while (haystack[i + j] == needle[j])
+        {
+            if (needle[j + 1] == '\0')
+                return ((char *)&haystack[i]);
+            j++;
+        }
         i++;
+        j = 0;
     }
+    return (NULL);
 }
