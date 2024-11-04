@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "libc.h": "c",
-        "libft.h": "c",
-        "stdio.h": "c"
-    },
-    "makefile.configureOnOpen": false
-}
