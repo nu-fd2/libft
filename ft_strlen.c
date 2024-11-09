@@ -6,13 +6,13 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:42:08 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/10/29 00:55:33 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/09 10:11:36 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(char *who)
+size_t ft_strlen(const char *who)
 {
 	size_t ask;
 

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:45:28 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/03 13:44:06 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/05 17:19:04 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_putchar_fd(char c, int fd)
 {
-    if (fd < 1)
+    if (!fd)
         return;
     write(fd, &c, 1);
 }

@@ -6,82 +6,53 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 02:26:05 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/02 22:32:16 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/08 23:43:20 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-//#include "libft.h"
-
-// void ft_putin(int nb, char *str)
-// {
-//     if (nb < 0)
-//     {
-//         ft_trump(str, '-');
-//         nb = -nb;
-//     }
-//     if (nb == -2147483648)
-//     {
-//         ft_trump(str, '2');
-//         ft_putin(147483648, str);
-//     }
-//     if (nb >= 10)
-//     {
-//         ft_putin(nb / 10, str);
-//         ft_putin(nb % 10, str);
-//     }
-//     else if (nb >= 0 && nb <= 9)
-//         ft_trump(str, nb + '0');
-// }
-// void ft_trump(char *str, char c)
-// {
-//     while ((*str != '\0') && str++ == 0)
-//         str++;
-//     *str = c;
-// }
-
-// char *ft_itoa(int n)
-// {
-//     int i;
-//     int s;
-//     char *str;
-//     i = 0;
-//     s = 0;
-//     if (n < 0)
-//         s = 1;
-//     if (n == 0)
-//     {
-//         *str = '0';
-//         return (str);
-//     }
-//     str = ft_calloc(11 + s, sizeof(char));
-//     if (!str)
-//         return (NULL);
-//     ft_putin(n, str);
-//     return (str);
-// }
-
-
-// void *ft_calloc(size_t count, size_t size)
-// {
-//     int i;
-//     void *ptr;
-    
-//     i = 0;
-//     ptr = malloc(size * count);
-//     if ((!ptr) || (count * size <= 0))
-//         ptr = NULL;
-//     else
-//         ft_bzero(ptr, count);
-//     return (ptr);
-// }
-
-// int main()
-// {
-//     printf("%s\n", ft_itoa(123456));
-// }
+static int ft_intlen(int nbr)
+{
+    int i;
+    i = 1;
+    while (nbr >= 10 || nbr <= -10)
+    {
+        nbr = nbr / 10;
+        i++;
+    }
+    return (i);
+}
+static char *ft_instr(int n)
+{
+    int i;
+    int len;
+    char *nbr;
+    i = 0;
+    len = ft_intlen(n);
+    if (n < 0)
+        len++;
+    nbr = ft_calloc(sizeof(char), len + 1);
+    if (!nbr)
+        return (NULL);
+    if (n < 0)
+    {
+        nbr[0] = '-';
+        n = -n;
+    }
+    while (i < len && nbr[len - i - 1] != '-')
+    {
+        nbr[len - i - 1] = (n % 10) + 48;
+        n = n / 10;
+        i++;
+    }
+    return (nbr);
+}
+char *ft_itoa(int n)
+{
+    if (!n)
+        return (ft_strdup("0"));
+    else if (n == -2147483648)
+        return (ft_strdup("-2147483648"));
+    return (ft_instr(n));
+}

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 20:22:45 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/03 16:03:29 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/05 20:46:10 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
     int j;
     i = 0;
     j = 0;
+    if (!haystack && n == 0)
+        return (NULL);
     if (needle[i] == '\0')
         return ((char *)haystack);
-    if (ft_strlen((char *)needle) > n)
-        return (NULL);
     while (haystack[i] && i < n)
     {
         while (haystack[i + j] == needle[j] || !needle[j])
