@@ -6,26 +6,27 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:55:02 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 10:30:26 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/09 13:06:31 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-    size_t i;
-    unsigned char *d;
-    const unsigned char *s;
-    i = 0;
-    d = dst;
-    s = src;
-    if (!dst && !src)
-        return (dst);
-    while (n > i)
-    {
-        d[i] = s[i];
-        i++;
-    }
-    return (dst);
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
+
+	i = 0;
+	d = dst;
+	s = src;
+	if (!dst && !src)
+		return (dst);
+	while (n > i)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }

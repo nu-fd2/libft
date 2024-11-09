@@ -6,22 +6,22 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 17:45:47 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/07 16:07:01 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/09 12:43:31 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!s)
-        return;
-    while (s[i] != '\0')
-    {
-        f(i, &s[i]);
-        i++;
-    }
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
