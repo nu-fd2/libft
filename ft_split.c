@@ -6,22 +6,16 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 19:56:25 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/10 22:41:47 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/11 20:43:45 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**frre(char **arr)
+static char	**frre(char **arr, int i)
 {
-	int	i;
-
-	i = 0;
-	while (arr[i] != NULL)
-	{
+	while (--i >= 0)
 		free (arr[i]);
-		i++;
-	}
 	free (arr);
 	return (NULL);
 }
@@ -51,26 +45,25 @@ static int	f_words(const char *str, char c)
 
 static char	**m_lit(char **arr, int word, const char *str, char c)
 {
-	int	i;
-	int	j;
-	int	k;
+	char	*next;
 
+	int (i), (j), (k);
 	i = 0;
-	j = 0;
 	k = 0;
 	while (word)
 	{
-		while (str[i] == c)
+		while (str[i] == c && str[i])
 			i++;
 		if (str[i] != c && str[i])
 		{
-			if (!ft_strchr(&str[i], c))
+			next = ft_strchr(&str[i], c);
+			if (!next)
 				j = ft_strlen(&str[i]);
 			else
-				j = ft_strchr(&str[i], c) - &str[i];
+				j = next - &str[i];
 			arr[k++] = ft_substr(&str[i], 0, j);
 			if (!arr[k - 1])
-				return (frre(arr));
+				return (frre(arr, k));
 			i = i + j;
 		}
 		word--;
@@ -91,7 +84,5 @@ char	**ft_split(const char *str, char c)
 	arr = ft_calloc(sizeof(char *), word + 1);
 	if (!arr)
 		return (NULL);
-	if (!m_lit(arr, word, str, c))
-		return (frre(arr));
-	return (arr);
+	return (m_lit(arr, word, str, c));
 }
