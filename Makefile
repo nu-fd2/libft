@@ -6,7 +6,7 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/24 17:00:38 by oel-mado          #+#    #+#              #
-#    Updated: 2024/11/11 17:37:51 by oel-mado         ###   ########.fr        #
+#    Updated: 2024/11/13 05:06:18 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,22 +49,37 @@ SRC = ft_atoi.c\
 	ft_strtrim.c\
 	ft_substr.c\
 	ft_tolower.c\
-	ft_toupper.c\
+	ft_toupper.c
+
+SRCB = ft_lstnew_bonus.c\
+	ft_lstadd_front_bonus.c\
+	ft_lstadd_back_bonus.c\
+	ft_lstsize_bonus.c\
+	ft_lstlast_bonus.c\
+	ft_lstdelone_bonus.c\
+	ft_lstclear_bonus.c\
+	ft_lstiter_bonus.c\
+	ft_lstmap_bonus.c
 
 OBJ = ${SRC:.c=.o}
+
+OBJB = ${SRCB:.c=.o}
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	@ar rcs ${NAME} ${OBJ}
+	ar rcs ${NAME} ${OBJ}
+
+bonus: ${OBJB}
+	ar rcs ${NAME} ${OBJB}
 
 %.o: %.c
-	@${CC} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
-	@rm -f ${OBJ}
+	rm -f ${OBJ} ${OBJB}
 
 fclean: clean
-	@rm -f ${NAME}
+	rm -f ${NAME}
 
 re: fclean all

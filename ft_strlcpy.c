@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 05:22:13 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 12:32:32 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:15:14 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)

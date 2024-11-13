@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 05:28:39 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/12 19:33:12 by oel-mado         ###   ########.fr       */
+/*   Created: 2024/11/09 14:28:28 by oel-mado          #+#    #+#             */
+/*   Updated: 2024/11/12 20:22:58 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	f;
-	size_t	l;
+	t_list	*new;
 
-	f = 0;
-	if (!s1 || !set)
+	new = malloc(sizeof(t_list));
+	if (!new)
 		return (NULL);
-	if (s1 == '\0')
-		return (ft_calloc(sizeof(char), 1));
-	l = ft_strlen(s1);
-	if (set == '\0' || !l)
-		return (ft_strdup(s1));
-	l--;
-	while (s1[f] && ft_strchr(set, s1[f]))
-		f++;
-	while (l > f && ft_strrchr(set, s1[l]))
-		l--;
-	return (ft_substr(s1, f, l - f + 1));
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

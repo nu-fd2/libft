@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 02:56:44 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 12:33:52 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:14:36 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	int	i;
-	int	j;
-	int	k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	i = 0;
 	j = 0;

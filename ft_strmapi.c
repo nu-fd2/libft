@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 00:03:26 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 12:31:16 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:16:00 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	char	*ptr;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	if (!s)
