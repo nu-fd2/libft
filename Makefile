@@ -6,13 +6,13 @@
 #    By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/24 17:00:38 by oel-mado          #+#    #+#              #
-#    Updated: 2024/11/13 05:06:18 by oel-mado         ###   ########.fr        #
+#    Updated: 2024/11/14 13:03:02 by oel-mado         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -73,7 +73,7 @@ ${NAME}: ${OBJ}
 bonus: ${OBJB}
 	ar rcs ${NAME} ${OBJB}
 
-%.o: %.c
+%.o: %.c libft.h
 	${CC} ${CFLAGS} -c $< -o $@
 
 clean:
@@ -83,3 +83,5 @@ fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re

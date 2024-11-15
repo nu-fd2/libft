@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 05:22:13 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/12 19:15:14 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/14 22:22:01 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
+	if (n > 0)
+		dst[i] = '\0';
 	return (ft_strlen(src));
 }

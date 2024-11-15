@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:54:55 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 13:13:01 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:09:59 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len)
-		((char *)s)[i++] = '\0';
+	ft_memset(s, 0, len);
 }

@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:12:07 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/13 03:26:35 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/14 22:56:07 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {

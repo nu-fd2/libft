@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 00:03:26 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/12 19:16:00 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/14 22:27:29 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	ptr = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	ptr = ft_calloc(sizeof(char), (ft_strlen(s) + 1));
 	if (!ptr)
 		return (ptr);
 	if (!s)
@@ -33,6 +33,5 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 		ptr[i] = f(i, s[i]);
 		i++;
 	}
-	ptr[i] = '\0';
 	return (ptr);
 }

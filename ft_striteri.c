@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 17:45:47 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/09 12:43:31 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/14 01:50:20 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int	i;
 
 	i = 0;
-	if (!s)
+	if (!s || !f)
 		return ;
 	while (s[i] != '\0')
 	{

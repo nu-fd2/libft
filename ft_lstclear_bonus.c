@@ -6,7 +6,7 @@
 /*   By: oel-mado <oel-mado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:29:14 by oel-mado          #+#    #+#             */
-/*   Updated: 2024/11/13 03:04:09 by oel-mado         ###   ########.fr       */
+/*   Updated: 2024/11/14 01:43:35 by oel-mado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*fr;
 	t_list	*nxt;
 
-	if (!lst || !del)
+	if (!lst || !(*lst) || !del)
 		return ;
 	nxt = *lst;
 	while (nxt)
